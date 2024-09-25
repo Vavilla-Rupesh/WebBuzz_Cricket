@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+.teams-page {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0A1A2F;
+  color: #D1D5DB;
+  min-height: 100vh;
+  padding: 80px 5% 2rem;
+}
+
+.teams-page h1 {
+  color: #00FFFF;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.team-card {
+  background-color: rgba(18, 18, 18, 0.8);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #0096FF;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  cursor: pointer;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 150, 255, 0.2);
+}
+
+.team-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 2px solid #0096FF;
+  box-shadow: 0 0 10px #0096FF;
+}
+
+.team-card h3 {
+  color: #00FFFF;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.team-popup {
+  background-color: #121212;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #0096FF;
+  color: #D1D5DB;
+}
+
+.team-popup h2 {
+  color: #00FFFF;
+  margin-bottom: 1rem;
+}
+
+.team-popup p {
+  margin-bottom: 0.5rem;
+}
+
+.team-popup button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  background-color: #0096FF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.team-popup button:hover {
+  background-color: #00FFFF;
+}
+
+@media (max-width: 768px) {
+  .teams-page {
+    padding-top: 100px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}

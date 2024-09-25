@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0A1A2F;
+  color: #D1D5DB;
+  line-height: 1.6;
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: rgba(10, 26, 47, 0.8);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 5px #00FFFF;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar li {
+  margin-left: 2rem;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s, text-shadow 0.3s;
+  font-size: 1.2rem;
+}
+
+.navbar a svg {
+  font-size: 1.2rem;
+}
+
+.navbar a:hover {
+  color: #00FFFF;
+  text-shadow: 0 0 5px #00FFFF;
+}
+
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(rgba(10, 26, 47, 0.7), rgba(30, 58, 138, 0.7)),
+              url('path/to/cricket-stadium-floodlights.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px #00FFFF;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Add this for the subtle light animations */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 80%);
+  animation: pulse 15s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-25%, -25%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+main {
+  display: flex;
+  padding: 2rem 5%;
+  gap: 2rem;
+}
+
+.featured-match, .top-performers {
+  flex: 1;
+}
+
+h2 {
+  color: #00FFFF;
+  margin-bottom: 1rem;
+}
+
+.match-card, .performer-card {
+  background-color: #121212;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #0096FF;
+  backdrop-filter: blur(10px);
+  background-color: rgba(18, 18, 18, 0.8);
+}
+
+.match-card:hover, .performer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 150, 255, 0.2);
+}
+
+.btn {
+  display: inline-block;
+  background-color: #0096FF;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  background-color: #00FFFF;
+  box-shadow: 0 0 5px #00FFFF;
+}
+
+.performer-cards {
+  display: flex;
+  gap: 1rem;
+}
+
+.performer-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  border: 2px solid #0096FF;
+  box-shadow: 0 0 10px #0096FF;
+}
+
+footer {
+  background-color: #0A1A2F;
+  color: #D1D5DB;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    margin-top: 1rem;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar li {
+    margin: 0.5rem 0;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .performer-cards {
+    flex-direction: column;
+  }
+}
